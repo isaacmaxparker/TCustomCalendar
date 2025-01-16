@@ -53,11 +53,7 @@ android {
 
 publishing {
     publications {
-        register<MavenPublication>("sdkLibrary") {
-            groupId = "<group_id>"
-            artifactId = "<artifact_id>"
-            version = "0.0.1-SNAPSHOT"
-        }
+        register<MavenPublication>("sdkLibrary") {}
     }
 }
 

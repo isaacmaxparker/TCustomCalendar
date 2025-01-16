@@ -1,8 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    "maven-publish"
-    "maven"
+    id("maven-publish")
 }
 
 android {
@@ -51,8 +50,18 @@ android {
     }
 }
 
-dependencies {
 
+publishing {
+    publications {
+        register<MavenPublication>("sdkLibrary") {
+            groupId = "<group_id>"
+            artifactId = "<artifact_id>"
+            version = "0.0.1-SNAPSHOT"
+        }
+    }
+}
+
+dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
